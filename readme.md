@@ -1,21 +1,20 @@
 node-foursquare
 ==================
 
-Fault-tolerant Foursquare API wrapper for Node JS.
+Fault-tolerant Foursquare Venues API wrapper for Node JS.  This module was fathered by Clint Hall https://github.com/clintandrewhall/node-foursquare  However his original api covered the full foursquare api and this is for the limited api which does not require an access token to be retrieved via OAuth. You can read more about the Foursquare Venues Project here: https://developer.foursquare.com/venues/
 
 Install
 -------
 
-    npm install node-foursquare
+    npm install foursquare-venues
 
 
 Use
 ---
 
-The Foursquare module takes an optional parameter in case you want/need to specify alternate URLs for Foursquare, (that
-is unlikely).
+The Foursquare Venues module takes an parameter which allows you to specify your client_id and client\_secret which are required. 
 
-    var foursquare = require("node-foursquare").Foursquare();
+    var foursquare = require("foursquare-venues").Foursquare();
 
 Once instantiated, you just need to set up the correct endpoints on your own server that match your OAuth configuration
 in Foursquare.  Using express, for example:
@@ -72,11 +71,11 @@ Testing
 
 To test, you need to create a config.js file in the /test directory as follows:
 
-    exports.config = {
-      "clientId" : [YOUR_CLIENT_ID],
-      "clientSecret" : [YOUR_CLIENT_SECRET],
-      "redirectUrl" : [YOUR_REDIRECT]
-    };
+	exports.config = {
+		  "clientId" : [YOUR_CLIENT_ID]
+		, "clientSecret" : [YOUR_CLIENT_SECRET],
+		, "apiUrl" : "https://api.foursquare.com/v2"
+	};
 
 Then, simply invoke the test.js file with Node.JS:
 
