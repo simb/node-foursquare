@@ -173,7 +173,7 @@ function TestSuite() {
             "lng": "-74"
         };
 
-        Foursquare.Tips.search(query.lat,query.lng, null,
+        Foursquare.Tips.search(query, null,
         function(error, data) {
             if (error) {
                 logger.error("Foursquare.Tips.search \033[22;31mERROR: " + error.message);
